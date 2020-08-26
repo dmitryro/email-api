@@ -41,7 +41,10 @@ def process_email(*args, **kwargs):
             mess = str.replace(mess, '[subject]', subject)
             mess = str.replace(mess, '[message]', message) 
             mess = str.replace(mess, '[email]', email)           
+            mess = str.replace(mess, '[greeting]', "Dear")
+            mess = str.replace(mess, "[greeting_statement]", "Thank you for contacting us!")
             mess = str.replace(mess, '[greeting_global_link]', 'https://3dact.com')
+            mess = str.replace(mess, "[wait_statement]", "While you're waiting, please research 3dact.com")
         except Exception as e:
             logger.error(f"Error parsing email ... {e}")         
 
@@ -104,12 +107,14 @@ def process_customer_email(*args, **kwargs):
             m = f.read()
             mess = str.replace(m, '[full_name]', full_name)
             mess = str.replace(mess, '[greeting_global_link]', 'https://3dact.com')
+            mess = str.replace(mess, '[greeting]', "Dear")
+            mess = str.replace(mess, "[greeting_statement]", "Thank you for contacting us!")
             mess = str.replace(mess, '[title]', title)
             mess = str.replace(mess, '[subject]', subject)
             mess = str.replace(mess, '[message]', message) 
             mess = str.replace(mess, '[email]', email)           
+            mess = str.replace(mess, "[wait_statement]", "While you're waiting, please research 3dact.com")
             mess = str.replace(mess, '[greeting_statement]', "Thank you for getting in touch with us!")
-            mess = str.replace(mess, '[greeting]', 'Dear')    
             mess = str.replace(mess, '[wait_statement]', "Please give us 1 day to respond!")
         except Exception as e:
             logger.error(f"Error parsing email ... {e}")         
@@ -136,9 +141,9 @@ def process_customer_email(*args, **kwargs):
 
 
 if __name__=='__main__':
-    process_email(full_name="Some Name", email='info@some-email.com', title='Fancy Title',
+    process_email(full_name="Dmitry R", email='dmitryro@gmail.com', title='Fancy Title',
                   subject='Fancy Subject', message='Fancy Message')
 
 
-    process_customer_email(full_name="Some Name", email='info@some-email.com', title='Fancy Title',
+    process_customer_email(full_name="Dmitry R", email='dmitryro@gmail.com', title='Fancy Title',
                            subject='Fancy Subject', message='Fancy Message')
