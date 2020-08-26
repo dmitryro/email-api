@@ -141,9 +141,9 @@ def process_customer_email(*args, **kwargs):
 
 
 if __name__=='__main__':
-    process_email(full_name="Dmitry R", email='dmitryro@gmail.com', title='Fancy Title',
+    process_email(full_name="Some User", email='info@some-site.com', title='Fancy Title',
                   subject='Fancy Subject', message='Fancy Message')
 
 
-    process_customer_email(full_name="Dmitry R", email='dmitryro@gmail.com', title='Fancy Title',
+    process_customer_email(full_name="Some User", email='info@some-site.com', title='Fancy Title',
                            subject='Fancy Subject', message='Fancy Message')
